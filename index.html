@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathilde Martine PAISLEY – Chef de Projet RH / SIRH / Paie</title>
+    <title>Mathilde Martine PAISLEY – Experte Paie & SIRH • Cheffe de projet fonctionnelle</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* Base styles */
+        /* Base */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #fdfbf7;
@@ -34,9 +34,14 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
         }
 
-        /* Header & Footer */
+        /* Header & Footer — dégradé sans vert (bleu → corail → orange → doré) */
         .main-header, .main-footer {
-            background: linear-gradient(90deg, #0A2342, #304E78, #D4AF37);
+            background: linear-gradient(90deg,
+                #0A2342 0%,
+                #304E78 35%,
+                #D9826C 70%,
+                #F59E0B 85%,
+                #D4AF37 100%);
             background-size: 200% 200%;
             animation: gradient-animation 12s ease infinite;
             color: white;
@@ -64,46 +69,25 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.2); transform: translateY(-2px);
         }
         
-        /* Accents & Global Styles */
+        /* Accents */
         .accent-bronze { color: #D4AF37; }
         .text-accent-blue { color: #0A2342; }
         .section-container { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e9e2de; }
         .container-main b { color: #D9826C; }
-        .text-peps-rose-orange { color: #D9826C; }
         .text-peps-rouge-jaune { color: #D4AF37; }
 
-        /* Profile Picture - NEW STYLE */
+        /* Photo */
         .profile-picture-wrapper { 
-            float: left; 
-            margin-right: 1.5rem; 
-            margin-bottom: 0.5rem; 
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            shape-outside: circle(50%);
-            -webkit-shape-outside: circle(50%);
+            float: left; margin-right: 1.5rem; margin-bottom: 0.5rem;
+            width: 150px; height: 150px; border-radius: 50%; overflow: hidden;
+            border: 4px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            shape-outside: circle(50%); -webkit-shape-outside: circle(50%);
         }
-        .profile-picture {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .profile-picture { width: 100%; height: 100%; object-fit: cover; }
         .presentation-text-container::after { content: ""; display: table; clear: both; }
         @media (max-width: 768px) {
-            .profile-picture-wrapper {
-                float: none;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 1.5rem;
-                width: 180px;
-                height: 180px;
-            }
-            .presentation-text-container {
-                text-align: center;
-            }
+            .profile-picture-wrapper { float: none; margin: 0 auto 1.5rem; width: 180px; height: 180px; }
+            .presentation-text-container { text-align: center; }
         }
         
         /* Timeline */
@@ -118,28 +102,50 @@
         .timeline-details { max-height: 0; overflow: hidden; transition: max-height 0.8s ease-out; background-color: #fdfbf7; border-top: 1px solid #e9e2de; margin-top: 15px; padding-top: 0; }
         .timeline-item-content.active .timeline-details { max-height: var(--content-height, 1500px); padding-top: 15px; }
         
-        /* Gradients */
+        /* Nuanciers (fonds doux, sans vert) */
         .gradient-1 { background: linear-gradient(45deg, #fdfbf7, #e9e2de); }
         .gradient-2 { background: linear-gradient(45deg, #fdfbf7, #fff0e0); }
-        .gradient-3 { background: linear-gradient(45deg, #fdfbf7, #e0f2f7); }
-        .gradient-4 { background: linear-gradient(45deg, #fdfbf7, #f0e6ff); }
-        .gradient-5 { background: linear-gradient(45deg, #fdfbf7, #fffbe0); }
-        .gradient-6 { background: linear-gradient(45deg, #fdfbf7, #e4fde4); }
+        .gradient-3 { background: linear-gradient(45deg, #fdfbf7, #f0e6ff); }
+        .gradient-4 { background: linear-gradient(45deg, #fdfbf7, #ffe9e4); }
+        .gradient-5 { background: linear-gradient(45deg, #fdfbf7, #ffe2d0); }
+        .gradient-6 { background: linear-gradient(45deg, #fdfbf7, #fff3e0); }
 
-        /* Formations */
-        .formation-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .formation-badge { background: linear-gradient(135deg, #0A2342 0%, #304E78 100%); color: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); text-align: center; position: relative; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
-        .formation-badge:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); }
-        .badge-icon { font-size: 3rem; margin-bottom: 1rem; color: #D4AF37; }
-        .badge-title { font-size: 1.4rem; font-weight: 800; color: #D4AF37; }
-        .badge-skills-list { list-style: none; padding: 0; text-align: left; max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
-        .formation-badge.active .badge-skills-list { max-height: var(--badge-content-height, 300px); }
-        .badge-skills-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; }
-        .badge-skills-list li::before { content: '✔️'; position: absolute; left: 0; color: #D4AF37; }
-        .formation-badge .toggle-icon { position: absolute; bottom: 1rem; right: 1rem; font-size: 2rem; color: #D9826C; transition: transform 0.3s ease; }
+        /* Formations — 2×2, moins “en avant”, repliées par défaut (titre seul) */
+        .formation-grid {
+            display: grid; gap: 2rem; grid-template-columns: 1fr;
+        }
+        @media (min-width: 768px) {
+            .formation-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .formation-badge {
+            background: linear-gradient(135deg, #FFF7F2 0%, #FFE9E0 100%); /* fond chaud discret */
+            color: #4a4a4a;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid #efd6cb;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* ombre plus légère */
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+        }
+        .formation-badge:hover { transform: translateY(-4px); box-shadow: 0 10px 18px rgba(0,0,0,0.12); }
+        .badge-header { display: flex; align-items: center; gap: .75rem; }
+        .badge-icon { font-size: 2rem; color: #D9826C; }
+        .badge-title { font-size: 1.1rem; font-weight: 800; color: #0A2342; }
+        .badge-details { margin-top: .5rem; font-size: .95rem; line-height: 1.35rem; }
+        .badge-details, .badge-skills-list { max-height: 0; overflow: hidden; transition: max-height .45s ease; }
+        .formation-badge.active .badge-details,
+        .formation-badge.active .badge-skills-list { max-height: 350px; }
+        .badge-skills-list { list-style: none; padding: .5rem 0 0 0; }
+        .badge-skills-list li { position: relative; padding-left: 1.3rem; margin-bottom: 0.35rem; }
+        .badge-skills-list li::before { content: '✔️'; position: absolute; left: 0; }
+        .formation-badge .toggle-icon {
+            position: absolute; bottom: .8rem; right: 1rem; font-size: 1.4rem; color: #D9826C; transition: transform .25s ease;
+        }
         .formation-badge.active .toggle-icon { transform: rotate(45deg); }
 
-        /* Infos & Engagement Cards */
+        /* Cartes & divers */
         .info-category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
         .info-dynamic-card { background-color: #ffffff; border-radius: 1rem; padding: 2rem; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; border: 2px solid transparent; min-height: 250px; display: flex; flex-direction: column; justify-content: center; }
         .info-dynamic-card:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); border-color: #D4AF37; }
@@ -155,24 +161,24 @@
         .community-accordion-item .toggle-icon { transition: transform 0.3s ease; }
         .community-accordion-item.active .toggle-icon { transform: rotate(45deg); }
 
-        /* Social Media Buttons */
+        /* Boutons sociaux */
         .social-logo-button { display: inline-flex; align-items: center; justify-content: center; width: 150px; height: 50px; border-radius: 9999px; color: white; font-weight: 700; font-size: 1.2rem; text-decoration: none; margin: 0 0.5rem; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         .social-logo-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-        .social-logo-button.whatsapp { background-color: #25D366; }
+        .social-logo-button.whatsapp { background-color: #25D366; } /* laisser tel quel */
         .social-logo-button.discord { background-color: #7289DA; }
 
-        /* Contact Section */
+        /* Contact */
         .contact-container { display: flex; flex-direction: column; align-items: center; gap: 25px; padding: 40px; background-color: #ffffff; border-radius: 25px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); width: 100%; max-width: 800px; margin: 0 auto; }
-        .contact-pre-title { font-size: 2.5em; font-weight: 800; margin: 0; background: linear-gradient(45deg, #D9826C, #D4AF37, #0A2342); -webkit-background-clip: text; color: transparent; }
+        .contact-pre-title { font-size: 2.5em; font-weight: 800; margin: 0; background: linear-gradient(45deg, #D9826C, #F59E0B, #D4AF37); -webkit-background-clip: text; color: transparent; }
         .contact-title { font-size: 1.6em; font-weight: 600; color: #0A2342; margin-top: 10px; }
         .contact-cards-grid { display: grid; grid-template-columns: 1fr; gap: 20px; width: 100%; }
         @media (min-width: 768px) { .contact-cards-grid { grid-template-columns: repeat(2, 1fr); } }
         .contact-card { width: 100%; padding: 2px; border-radius: 20px; position: relative; transition: transform 0.3s ease; }
-        .contact-card::before { content: ''; position: absolute; inset: 0; border-radius: 20px; padding: 3px; background: linear-gradient(45deg, #D9826C, #D4AF37, #0A2342); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: -1; }
+        .contact-card::before { content: ''; position: absolute; inset: 0; border-radius: 20px; padding: 3px; background: linear-gradient(45deg, #D9826C, #F59E0B, #D4AF37); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: -1; }
         .contact-card-content { padding: 25px; border-radius: 18px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); height: 100%; }
         .contact-card.card-phone .contact-card-content { background: linear-gradient(45deg, #fdfbf7, #ffe9e4); }
-        .contact-card.card-email .contact-card-content { background: linear-gradient(45deg, #fdfbf7, #fffbe0); }
-        .contact-card.card-address .contact-card-content { background: linear-gradient(45deg, #fdfbf7, #e0f2f7); }
+        .contact-card.card-email .contact-card-content { background: linear-gradient(45deg, #fdfbf7, #fff3e0); }
+        .contact-card.card-address .contact-card-content { background: linear-gradient(45deg, #fdfbf7, #f0e6ff); }
         .contact-card.card-cv .contact-card-content { background: linear-gradient(45deg, #fdfbf7, #f0e6ff); }
         .contact-card:hover { transform: translateY(-8px); }
         .contact-link { display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; color: #4a4a4a; height: 100%;}
@@ -182,7 +188,7 @@
         .contact-text-value { font-size: 1.2em; font-weight: 500; transition: color 0.3s ease; word-break: break-word; }
         .contact-card:hover .contact-text-value { color: #0A2342; }
 
-        /* Réalisations Accordion */
+        /* Réalisations */
         .realisations-accordion-item { border-radius: 1rem; padding: 1.5rem; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); margin-bottom: 1.5rem; transition: transform 0.3s ease; }
         .realisations-accordion-item:hover { transform: translateY(-5px); }
         .realisations-accordion-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
@@ -196,11 +202,11 @@
         .realisations-accordion-content ul li { position: relative; padding-left: 1.5rem; margin-bottom: 0.4rem; }
         .realisations-accordion-content ul li::before { content: '✅'; position: absolute; left: 0; color: #D4AF37; }
 
-        /* Soft & Hard Skills with Popups */
+        /* Soft & Hard Skills (inchangé) */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .skill-card { border-radius: 1rem; padding: 1.5rem; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; }
         .skill-card:hover { transform: translateY(-5px); }
-        .skill-card h3 { font-size: 1.5rem; font-weight: 800; text-align: center; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e9e2de; background: linear-gradient(45deg, #D9826C, #D4AF37, #0A2342); -webkit-background-clip: text; color: transparent; }
+        .skill-card h3 { font-size: 1.5rem; font-weight: 800; text-align: center; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e9e2de; background: linear-gradient(45deg, #D9826C, #F59E0B, #D4AF37); -webkit-background-clip: text; color: transparent; }
         .skill-tags-container { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
         .skill-tag { display: flex; align-items: center; justify-content: space-between; border-radius: 0.5rem; font-size: 0.9rem; font-weight: 600; color: white; padding: 0.5rem 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
         .skill-tag:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
@@ -211,12 +217,20 @@
         .tag-hard-color-1 { background-color: #0A2342; }
         .tag-hard-color-2 { background-color: #457b9d; }
         .tag-hard-color-3 { background-color: #304E78; }
-        .skill-popup { position: absolute; background-color: #ffffff; border-radius: 0.75rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); padding: 1rem; z-index: 100; max-width: 300px; min-width: 250px; font-size: 0.9rem; line-height: 1.5; display: none; animation: fadeInPopup 0.3s ease-out forwards; }
-        .skill-popup.active { display: block; }
-        @keyframes fadeInPopup { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Hero Section */
-        .hero-title-container { text-align: center; padding: 3rem 1.5rem; border-radius: 0.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 2rem; background: linear-gradient(90deg, #0A2342, #304E78, #D4AF37); background-size: 200% 200%; animation: gradient-animation 12s ease infinite; }
+        /* Hero */
+        .hero-title-container {
+            text-align: center; padding: 3rem 1.5rem; border-radius: 0.75rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 2rem;
+            background: linear-gradient(90deg,
+                #0A2342 0%,
+                #304E78 35%,
+                #D9826C 70%,
+                #F59E0B 85%,
+                #D4AF37 100%);
+            background-size: 200% 200%;
+            animation: gradient-animation 12s ease infinite;
+        }
         .hero-name { font-size: 2rem; font-weight: 900; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
         .hero-job-title { font-size: 1.5rem; font-weight: 600; color: white; opacity: 0.9; }
     </style>
@@ -239,24 +253,25 @@
 
     <div class="hero-title-container">
         <h1 class="hero-name">Mathilde Martine PAISLEY</h1>
-        <h2 class="hero-job-title">Chef de Projet RH / SIRH / Paie</h2>
+        <h2 class="hero-job-title">Experte Paie & SIRH – Cheffe de projet fonctionnelle</h2>
     </div>
 
     <div class="container-main max-w-7xl w-full mx-auto p-6 sm:p-10 rounded-lg">
-        
+        <!-- Présentation -->
         <div id="presentation-section" class="section-container">
             <h2 class="text-2xl sm:text-3xl font-bold section-title mb-8 text-center">Mon Profil en un Coup d'Œil</h2>
             <div class="presentation-text-container text-gray-700 leading-relaxed text-justify">
                 <div class="profile-picture-wrapper">
                     <img src="IMG_1392 (1).jpg" alt="Photo de profil de Mathilde Martine PAISLEY" class="profile-picture">
                 </div>
-                <p class="mb-4">Je me positionne comme une <b>Partenaire Stratégique RH, Paie & Transformation Digitale</b>. Avec ma nouvelle certification d'<b>Expert en stratégie digitale</b>, j'apporte désormais une vision globale et une capacité à piloter la transformation numérique des organisations.</p>
-                <p class="mb-4">J'accompagne les entreprises dans la traduction opérationnelle et réglementaire de leurs projets, en m'assurant que la paie et les enjeux RH soient pleinement compris et intégrés. <b>Acteur indispensable de la transformation digitale</b>, je définis et développe la stratégie digitale en intégrant les nouvelles technologies de communication.</p>
-                <p class="mb-4">À la croisée du métier RH, de la maîtrise réglementaire et de la transformation digitale, je sécurise les projets pour qu’ils répondent réellement aux besoins du terrain et soutiennent la performance durable des équipes, en diffusant une <b class="accent-bronze">forte culture digitale</b>. Mon approche est à la fois stratégique, opérationnelle et centrée sur l'humain.</p>
-                <p class="font-bold text-lg text-peps-rouge-jaune text-center mt-6 clear-both">"La synergie entre l'humain et le digital est la clé d'une transformation réussie."</p>
+                <p class="mb-4"><b>Experte Paie & SIRH</b> avec 20 ans d’expérience, j’assure la fiabilisation des processus RH et la réussite des projets (AMOA, recette, déploiement) aux côtés des équipes Paie, RH et DSI.</p>
+                <p class="mb-4">Je traduis les besoins métiers en <b>spécifications actionnables</b>, je pilote la <b>recette</b> et je sécurise la <b>mise en production</b>, tout en formant et accompagnant les utilisateurs pour ancrer les nouvelles pratiques.</p>
+                <p class="mb-4">Mes terrains de jeu : <b>HR Access</b>, <b>SAP SuccessFactors</b>, <b>Chronotime</b>, <b>Cegid</b>… avec une veille et une <b>conformité sociale</b> solides (DSN, obligations légales, conventions collectives).</p>
+                <p class="font-bold text-lg text-peps-rouge-jaune text-center mt-6 clear-both">« Des processus robustes, des équipes autonomes et un SIRH qui sert le terrain. »</p>
             </div>
         </div>
 
+        <!-- Parcours -->
         <div id="experiences-section" class="section-container">
             <h2 class="text-2xl sm:text-3xl font-bold section-title mb-8 text-center">Parcours Professionnel</h2>
             <div class="timeline">
@@ -270,15 +285,81 @@
             </div>
         </div>
         
+        <!-- Formations (2×2, replié par défaut) -->
         <div id="formations-section" class="section-container">
             <h2 class="text-2xl sm:text-3xl font-bold section-title mb-8 text-center">Formations & Certifications</h2>
             <div class="formation-grid">
-                <div class="formation-badge"><span class="badge-icon">🏆</span><h3 class="badge-title">Expert en stratégie digitale</h3><p>Titre certifié (Niveau 7)</p><p>Obtention : Mars 2025</p><span class="toggle-icon">+</span><ul class="badge-skills-list"><li>Définition et pilotage de la stratégie digitale</li><li>Pilotage de la transformation numérique</li><li>Conduite du changement, diffusion culture digitale</li></ul></div>
-                <div class="formation-badge"><span class="badge-icon">🎖️</span><h3 class="badge-title">Manager Stratégique RH</h3><p>Titre certifié (Niveau 7)</p><p>Décembre 2023 - ESGRH Paris</p><span class="toggle-icon">+</span><ul class="badge-skills-list"><li>Pilotage RH, optimisation des processus</li><li>Gestion de la relation client/prestataire</li><li>Veille sociale et juridique</li></ul></div>
-                <div class="formation-badge"><span class="badge-icon">🎓</span><h3 class="badge-title">Paie, Droit Social & Admin.</h3><p>Formation Spécialisée</p><p>2013-2014 - M2i Paris</p><span class="toggle-icon">+</span><ul class="badge-skills-list"><li>Gestion complète de la paie et DSN</li><li>Conformité réglementaire</li><li>Administration du personnel</li></ul></div>
+                <!-- 1/4 -->
+                <div class="formation-badge">
+                    <div class="badge-header">
+                        <span class="badge-icon">📚</span>
+                        <h3 class="badge-title">Actualisation Paie & Droit Social</h3>
+                    </div>
+                    <div class="badge-details">
+                        Depuis 2025 — Référentiel <b>RNCP37948</b> — Ministère du Travail, du Plein Emploi
+                        <ul class="badge-skills-list">
+                            <li>Mises à jour DSN & conformité sociale</li>
+                            <li>Droit du travail & conventions collectives</li>
+                            <li>Gestion RH opérationnelle</li>
+                        </ul>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </div>
+
+                <!-- 2/4 -->
+                <div class="formation-badge">
+                    <div class="badge-header">
+                        <span class="badge-icon">🏆</span>
+                        <h3 class="badge-title">Expert en stratégie digitale</h3>
+                    </div>
+                    <div class="badge-details">
+                        2024–2025 — MBA Chief Digital Officer — <b>RNCP36287</b><br/>DIGITAL CAMPUS / ECAD CONSULTANTS
+                        <ul class="badge-skills-list">
+                            <li>Stratégie digitale & pilotage de projets</li>
+                            <li>Transformation & gouvernance</li>
+                            <li>Conduite du changement</li>
+                        </ul>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </div>
+
+                <!-- 3/4 -->
+                <div class="formation-badge">
+                    <div class="badge-header">
+                        <span class="badge-icon">🎖️</span>
+                        <h3 class="badge-title">Manager en Ressources Humaines</h3>
+                    </div>
+                    <div class="badge-details">
+                        2021–2023 — ESGRH — Certification professionnelle
+                        <ul class="badge-skills-list">
+                            <li>Pilotage RH & performance</li>
+                            <li>Organisation & conduite du changement</li>
+                            <li>Relations sociales</li>
+                        </ul>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </div>
+
+                <!-- 4/4 -->
+                <div class="formation-badge">
+                    <div class="badge-header">
+                        <span class="badge-icon">🎓</span>
+                        <h3 class="badge-title">Paie, Droit Social & Administration</h3>
+                    </div>
+                    <div class="badge-details">
+                        2013–2014 — M2i Paris — Formation spécialisée
+                        <ul class="badge-skills-list">
+                            <li>Gestion complète de la paie & DSN</li>
+                            <li>Conformité réglementaire</li>
+                            <li>Administration du personnel</li>
+                        </ul>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </div>
             </div>
         </div>
         
+        <!-- Compétences (inchangé) -->
         <div id="skills-section" class="section-container">
             <h2 class="text-2xl sm:text-3xl font-bold section-title mb-8 text-center">Soft & Hard Skills</h2>
             <div class="skills-grid">
@@ -287,6 +368,7 @@
             </div>
         </div>
         
+        <!-- Réalisations -->
         <div id="realisations-section" class="section-container">
              <h2 class="text-2xl sm:text-3xl font-bold section-title mb-8 text-center">Réalisations Clés</h2>
             <div class="realisations-accordion-item gradient-1"><div class="realisations-accordion-header"><div><h3>Nexpublica - Référente Fonctionnelle SIRH</h3><span class="period">Déc. 2024 – Mai 2025</span></div><span class="realisations-accordion-toggle-icon">+</span></div><div class="realisations-accordion-content"><ul><li>Appui fonctionnel sur l’outil Chronotime (GTA).</li><li>Analyse des besoins clients et rédaction de spécifications fonctionnelles.</li><li>Participation active à des ateliers de relecture avec les utilisateurs.</li></ul></div></div>
@@ -294,11 +376,13 @@
             <div class="realisations-accordion-item gradient-3"><div class="realisations-accordion-header"><div><h3>Talent Solutions - Chargée RH</h3><span class="period">Juillet 2022 à décembre 2022</span></div><span class="realisations-accordion-toggle-icon">+</span></div><div class="realisations-accordion-content"><ul><li><b>Gestion de la Paie :</b> Responsable de la paie pour 4 entités et 350 collaborateurs.</li><li><b>Encadrement d’équipe :</b> Transfert de compétences et mentorat.</li><li><b>Projet d’Optimisation RH :</b> Mise en place de solutions pour faciliter l’intégration des collaborateurs.</li></ul></div></div>
         </div>
 
+        <!-- Engagement -->
         <div id="engagement-section" class="section-container">
             <h2 class="text-2xl sm:text-3xl font-bold section-title mb-8 text-center">Engagement Communautaire</h2>
             <div class="info-dynamic-card gradient-3"><span class="info-card-large-icon">🤝</span><h3 class="info-card-header-title">Créatrice "Payroll Boss Elite Club"</h3><p>J'ai fondé et j'anime une communauté bénévole d'entraide et de formation pour les futurs gestionnaires de paie.</p><div class="flex justify-center mt-4 flex-wrap gap-2"><a href="https://chat.whatsapp.com/EtV0ux5ipAG5JDhopzo0ut" target="_blank" class="social-logo-button whatsapp">WhatsApp</a><a href="https://discord.gg/4XFpkQDzde" target="_blank" class="social-logo-button discord">Discord</a></div></div>
         </div>
 
+        <!-- Handicap -->
         <div id="handicap-section" class="section-container">
             <h2 class="text-2xl sm:text-3xl font-bold section-title mb-8 text-center">Engagement Éthique & Handicap</h2>
             <div class="info-dynamic-card gradient-2">
@@ -315,6 +399,7 @@
             </div>
         </div>
         
+        <!-- Contact -->
         <div id="contact-section" class="section-container">
             <div class="contact-container">
                 <div class="contact-header"><p class="contact-pre-title">Me contacter</p></div>
@@ -329,7 +414,7 @@
     </div>
 
     <footer class="main-footer">
-        <p>© 2025 Mathilde Martine PAISLEY - Chef de Projet RH / SIRH / Paie</p>
+        <p>© 2025 Mathilde Martine PAISLEY – Experte Paie & SIRH – Cheffe de projet fonctionnelle</p>
     </footer>
 
     <script>
@@ -342,7 +427,7 @@
                 });
             });
 
-            // Universal Accordion
+            // Accordions génériques
             function setupAccordion(triggerSelector, contentSelector, parentSelector, activeClass = 'active') {
                 document.querySelectorAll(triggerSelector).forEach(button => {
                     button.addEventListener('click', function(e) {
@@ -350,7 +435,7 @@
                         const parentItem = this.closest(parentSelector);
                         const content = parentItem.querySelector(contentSelector);
                         const wasActive = parentItem.classList.contains(activeClass);
-                        
+
                         const container = parentItem.parentElement;
                         container.querySelectorAll(parentSelector).forEach(otherItem => {
                             if (otherItem !== parentItem) {
@@ -371,42 +456,56 @@
                 });
             }
             setupAccordion('.timeline-toggle', '.timeline-details', '.timeline-item-content');
-            setupAccordion('.formation-badge', '.badge-skills-list', '.formation-badge');
+
+            // Formations: clic n'importe où sur la carte (titre visible, détails au clic)
+            document.querySelectorAll('.formation-badge').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const wasActive = this.classList.contains('active');
+                    const grid = this.parentElement;
+                    grid.querySelectorAll('.formation-badge').forEach(c => {
+                        c.classList.remove('active');
+                        const d1 = c.querySelector('.badge-details');
+                        const d2 = c.querySelector('.badge-skills-list');
+                        if (d1) d1.style.maxHeight = null;
+                        if (d2) d2.style.maxHeight = null;
+                    });
+                    if (!wasActive) {
+                        this.classList.add('active');
+                        const d1 = this.querySelector('.badge-details');
+                        const d2 = this.querySelector('.badge-skills-list');
+                        if (d1) d1.style.maxHeight = d1.scrollHeight + "px";
+                        if (d2) d2.style.maxHeight = d2.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // Accordions Communauté / Réalisations
             setupAccordion('.community-accordion-header', '.community-accordion-content', '.community-accordion-item');
             setupAccordion('.realisations-accordion-header', '.realisations-accordion-content', '.realisations-accordion-item');
 
-            // Skill Popups
+            // Popups de skills (inchangé)
             let activePopup = null;
-            function closeAllPopups() {
-                if (activePopup) {
-                    activePopup.remove();
-                    activePopup = null;
-                }
-            }
+            function closeAllPopups() { if (activePopup) { activePopup.remove(); activePopup = null; } }
             document.querySelectorAll('.skill-tag').forEach(tag => {
                 tag.addEventListener('click', function(event) {
                     event.stopPropagation();
                     closeAllPopups();
-
                     const fullText = this.dataset.fullText;
                     const popup = document.createElement('div');
                     popup.className = 'skill-popup';
                     popup.innerHTML = `<p>${fullText}</p>`;
                     document.querySelector('.container-main').appendChild(popup);
-                    
                     const tagRect = this.getBoundingClientRect();
                     const containerRect = document.querySelector('.container-main').getBoundingClientRect();
-                    
                     popup.style.top = `${tagRect.bottom - containerRect.top + 10}px`;
                     popup.style.left = `${tagRect.left - containerRect.left}px`;
-                    
                     requestAnimationFrame(() => {
                         if ((tagRect.left - containerRect.left + popup.offsetWidth) > containerRect.width - 20) {
                            popup.style.left = 'auto';
                            popup.style.right = '20px';
                         }
                     });
-                    
                     popup.classList.add('active');
                     activePopup = popup;
                 });
