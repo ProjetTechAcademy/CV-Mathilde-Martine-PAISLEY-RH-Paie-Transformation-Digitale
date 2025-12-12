@@ -3,624 +3,450 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mathilde Martine PAISLEY – Portfolio Glassmorphism ✨</title>
+  <title>CV - Mathilde Martine PAISLEY</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    /* ===== CONFIGURATION GLOBALE ===== */
+    /* ===== CONFIGURATION CHARTE GRAPHIQUE ===== */
     :root {
-      --primary-dark: #2c1a4d;
-      --glass-border: rgba(255, 255, 255, 0.4);
-      --glass-bg: rgba(255, 255, 255, 0.25);
-      --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-      
-      --blob-1: #ffc4bc;
-      --blob-2: #c8b6ff;
-      --blob-3: #b8f2e6;
+      --color-blue: #0F2C48;      /* Titres & séparations */
+      --color-yellow: #D9A526;    /* Boutons CTA */
+      --color-ivory: #F6F2E8;     /* Surfaces / cartes */
+      --color-bronze: #B4792A;    /* Alertes / éditions spéciales */
+      --bg-page: #ffffff;
     }
 
     body {
       font-family: 'Outfit', sans-serif;
       margin: 0;
       min-height: 100vh;
-      color: var(--primary-dark);
-      background-color: #f0f2f5;
+      color: var(--color-blue);
+      background-color: var(--bg-page);
       overflow-x: hidden;
     }
 
-    /* ===== FOND ANIMÉ ===== */
-    .background-blobs {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      overflow: hidden;
-      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-    }
-
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(60px);
-      opacity: 0.8;
-      animation: float 20s infinite alternate;
-    }
-    .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--blob-1); animation-delay: 0s; }
-    .blob-2 { bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: var(--blob-2); animation-delay: -5s; }
-    .blob-3 { top: 40%; left: 40%; width: 40vw; height: 40vw; background: var(--blob-3); animation-delay: -10s; }
-
-    @keyframes float {
-      0% { transform: translate(0, 0) rotate(0deg); }
-      100% { transform: translate(30px, 50px) rotate(10deg); }
-    }
-
-    /* ===== GLASSMORPHISM ===== */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.35);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--glass-shadow);
-      border-radius: 1.5rem;
-    }
-    
-    .glass-nav {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    /* ===== NAVIGATION ===== */
+    .header-nav {
+        background-color: rgba(255, 255, 255, 0.95);
+        border-bottom: 3px solid var(--color-blue);
+        box-shadow: 0 4px 15px rgba(15, 44, 72, 0.1);
     }
 
     .nav-link {
-      position: relative;
-      color: var(--primary-dark);
-      font-weight: 600;
-      transition: all 0.3s ease;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
+        color: var(--color-blue);
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+        border-radius: 6px;
+        transition: all 0.3s;
+        white-space: nowrap;
     }
-    .nav-link:hover, .nav-link.active {
-      background: rgba(255, 255, 255, 0.5);
-      color: #6a4c93;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    .nav-link:hover {
+        background-color: var(--color-blue);
+        color: white;
     }
 
+    /* ===== CARTES & SURFACES ===== */
+    .card-ivory {
+      background-color: var(--color-ivory);
+      border: 1px solid rgba(15, 44, 72, 0.1);
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-ivory:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===== TYPOGRAPHIE ===== */
     .section-title {
       font-size: 2rem;
       font-weight: 800;
       margin-bottom: 2rem;
-      background: linear-gradient(45deg, #2c1a4d, #6a4c93);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-align: center;
+      color: var(--color-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 4px solid var(--color-yellow);
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    h1, h2, h3, h4 { color: var(--color-blue); }
+
+    /* ===== BOUTONS ===== */
+    .btn-cta {
+        background-color: var(--color-yellow);
+        color: white;
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        transition: background-color 0.3s, transform 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .btn-cta:hover {
+        background-color: #c49420; /* Darker yellow */
+        transform: scale(1.05);
+    }
+    
+    .btn-secondary {
+        border: 2px solid var(--color-blue);
+        color: var(--color-blue);
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        transition: all 0.3s;
+    }
+    .btn-secondary:hover {
+        background-color: var(--color-blue);
+        color: white;
     }
 
     /* ===== TIMELINE ===== */
-    .timeline { position: relative; padding-left: 2rem; }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: rgba(255,255,255,0.5);
-      border-radius: 2px;
-    }
-    .timeline-item { position: relative; margin-bottom: 2.5rem; }
+    .timeline { position: relative; padding-left: 2rem; border-left: 3px solid var(--color-blue); margin-left: 1rem; }
+    
+    .timeline-item { position: relative; margin-bottom: 3rem; }
+    
     .timeline-dot {
       position: absolute;
       left: -2.6rem;
-      top: 1rem;
+      top: 0.5rem;
       width: 1.2rem;
       height: 1.2rem;
-      background: #fff;
-      border: 3px solid #c8b6ff;
+      background: var(--color-yellow);
+      border: 3px solid white;
       border-radius: 50%;
-      box-shadow: 0 0 0 4px rgba(200, 182, 255, 0.3);
-      z-index: 10;
-    }
-    .timeline-content {
-      padding: 1.5rem;
-      border-radius: 1rem;
-      background: rgba(255, 255, 255, 0.4);
-      border: 1px solid rgba(255,255,255,0.6);
-      transition: transform 0.3s ease, background 0.3s;
-      cursor: pointer;
-    }
-    .timeline-content:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.6);
-    }
-    .timeline-details {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      margin-top: 0;
-      opacity: 0;
-    }
-    .timeline-content.active .timeline-details {
-      max-height: 2000px; /* Augmenté pour contenir le contenu */
-      margin-top: 1.5rem;
-      opacity: 1;
-      border-top: 1px solid rgba(44, 26, 77, 0.08);
-      padding-top: 1.5rem;
+      box-shadow: 0 0 0 3px var(--color-blue);
     }
 
-    /* BLOCS OBJECTIF / RESULTAT (Mis à jour) */
-    .info-block {
-      background: rgba(255, 255, 255, 0.5);
-      border-left: 4px solid #c8b6ff;
-      padding: 1rem;
-      margin-bottom: 0.8rem;
-      border-radius: 0 0.8rem 0.8rem 0;
-      font-size: 0.95rem;
-    }
-    .info-label {
-      font-weight: 800;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
-      color: #6a4c93;
-      display: block;
-      margin-bottom: 0.3rem;
+    .date-badge {
+        background-color: var(--color-bronze);
+        color: white;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 0.5rem;
     }
 
-    /* ===== NOUVEAU DESIGN COMPÉTENCES (Clean List) ===== */
-    .skills-wrapper {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    @media(min-width: 768px) { .skills-wrapper { grid-template-columns: 1fr 1fr; } }
-
-    .skill-card-clean {
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 1.5rem;
-      padding: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-    }
-    .skill-title-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(44, 26, 77, 0.1);
-    }
-    .skill-icon-box {
-      width: 48px;
-      height: 48px;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    .skill-list-clean {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .skill-item-clean {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      padding: 0.6rem 0;
-      font-size: 1rem;
-      color: #333;
-      border-bottom: 1px dashed rgba(44, 26, 77, 0.05);
-    }
-    .skill-item-clean:last-child { border-bottom: none; }
-    .skill-bullet {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #c8b6ff;
+    /* ===== COMPETENCES ===== */
+    .skill-category {
+        border-left: 5px solid var(--color-yellow);
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
     }
 
-    /* ACCORDEONS */
-    .acc-item { margin-bottom: 1rem; }
-    .acc-header {
-      padding: 1.2rem;
-      background: rgba(255, 255, 255, 0.4);
-      border-radius: 1rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.3s;
-      font-weight: 700;
+    /* ===== FOOTER ===== */
+    .footer-section {
+        background-color: var(--color-blue);
+        color: white;
+        padding: 3rem 1rem;
     }
-    .acc-header:hover { background: rgba(255, 255, 255, 0.6); }
-    .acc-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 0 0 1rem 1rem;
-      margin-top: -0.5rem;
-      padding: 0 1.2rem;
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        color: white;
+        transition: background-color 0.3s;
+        font-size: 1.2rem;
     }
-    .acc-item.active .acc-body {
-      max-height: 500px;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+    .social-icon:hover {
+        background-color: var(--color-yellow);
     }
-    .acc-icon { transition: transform 0.3s; }
-    .acc-item.active .acc-icon { transform: rotate(45deg); }
 
-    @media (max-width: 768px) {
-      .header-inner { flex-direction: column; gap: 1rem; }
-      .nav-scroll { overflow-x: auto; width: 100%; padding-bottom: 5px; justify-content: flex-start; }
-      .timeline { padding-left: 1.5rem; }
-      .timeline-dot { left: -2.1rem; width: 1rem; height: 1rem; }
-    }
   </style>
 </head>
 <body>
 
-  <div class="background-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-
-  <header class="fixed top-0 w-full z-50 glass-nav shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between header-inner">
-      <div class="font-extrabold text-xl tracking-tight text-slate-800">
-        Mathilde Martine <span style="color:#6a4c93">PAISLEY</span>
-      </div>
-      <nav class="flex gap-2 nav-scroll text-sm">
-        <a href="#accueil" class="nav-link">Accueil</a>
-        <a href="#parcours" class="nav-link">Parcours</a>
-        <a href="#formations" class="nav-link">Formations</a>
-        <a href="#skills" class="nav-link">Compétences</a>
-        <a href="#contact" class="nav-link">Contact</a>
+  <!-- HEADER NAVIGATION -->
+  <header class="header-nav fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+      <!-- Logo Header -->
+      <a href="https://projettechacademy.github.io/Projet_Python/index.html" class="flex-shrink-0">
+        <img src="https://projettechacademy.github.io/Projet_Python/Asset/2127845D-F95D-49C0-A22B-88C07817841B.png" alt="Logo Header" class="h-12 w-auto object-contain">
+      </a>
+      
+      <!-- Menu Links -->
+      <nav class="flex flex-wrap justify-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
+        <a href="https://projettechacademy.github.io/Projet_Python/index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a>
+        <a href="https://projettechacademy.github.io/Projet_Python/Mon_Espace_Dev.html" class="nav-link"><i class="fas fa-chart-bar"></i> Mon Espace</a>
+        <a href="https://projettechacademy.github.io/Projet_Python/Programme_Formation_Digital.html" class="nav-link"><i class="fas fa-calendar-alt"></i> Planning</a>
+        <a href="https://projettechacademy.github.io/Projet_Python/Atelier_de_Competence.html" class="nav-link"><i class="fas fa-tools"></i> Atelier</a>
+        <a href="https://projettechacademy.github.io/Projet_Python/Observatoire_Dev_Elite_Club.html" class="nav-link"><i class="fas fa-rocket"></i> Observatoire</a>
+        <a href="https://projettechacademy.github.io/Projet_Python/Fiche_RNCP_Dev.html" class="nav-link"><i class="fas fa-medal"></i> RNCP</a>
+        <a href="https://projettechacademy.github.io/Projet_Python/Lexique_dev.html" class="nav-link"><i class="fas fa-book"></i> Lexique</a>
+        <a href="https://projettechacademy.github.io/Projet_Python/Acronymes.html" class="nav-link"><i class="fas fa-font"></i> Acronymes</a>
+        <a href="https://projettechacademy.github.io/Projet_Python/A_propos_de_moi.html" class="nav-link"><i class="fas fa-user"></i> Profil</a>
+        <a href="https://projettechacademy.github.io/MMPA_Portfolio-Mathilde_PAISLEY/" class="nav-link btn-cta text-white hover:text-white" style="padding: 0.5rem 1rem;"><i class="fas fa-briefcase"></i> Portfolio</a>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto mt-32 px-4 pb-20 space-y-24">
+  <main class="max-w-6xl mx-auto mt-40 px-4 pb-20 space-y-20">
 
-    <!-- HERO -->
-    <section id="accueil" class="text-center glass-card p-10 md:p-16 relative overflow-hidden">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-white opacity-30 rounded-full blur-3xl -z-10"></div>
-      
-      <div class="w-40 h-40 mx-auto rounded-full p-1 bg-white/50 shadow-lg mb-6 overflow-hidden backdrop-blur-sm">
-        <img src="https://projettechacademy.github.io/Juridique/Asset/Photo_Mathilde_Martine_PAISLEY.jpg" onerror="this.src='https://projettechacademy.github.io/Juridique/Asset/Photo_Mathilde_Martine_PAISLEY.jpeg'" alt="Photo de Mathilde Martine PAISLEY" class="w-full h-full object-cover rounded-full">
+    <!-- HERO SECTION -->
+    <section class="flex flex-col md:flex-row items-center gap-10 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+      <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#0F2C48] to-[#D9A526] rounded-full blur-md opacity-20 transform translate-x-2 translate-y-2"></div>
+        <img src="https://projettechacademy.github.io/Projet_Python/Asset/Photo_Mathilde_Martine_PAISLEY.jpeg" alt="Mathilde Martine PAISLEY" class="w-full h-full object-cover rounded-full border-4 border-[var(--color-ivory)] shadow-xl relative z-10">
       </div>
       
-      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-slate-800">
-        Experte Paie, Droit Social & SIRH ✨
-      </h1>
-      <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-light">
-        Consultante AMOA SIRH avec 20 ans d’expérience. Je pilote la <strong class="font-bold text-purple-700">recette</strong>, le <strong class="font-bold text-purple-700">support utilisateur</strong> et la <strong class="font-bold text-purple-700">conduite du changement</strong>.
-      </p>
-      
-      <div class="mt-8 flex justify-center gap-4">
-        <a href="https://drive.google.com/drive/folders/10Aq483IEJHfSpDmyrqHHp4Zbq8syG1Rn?usp=sharing" target="_blank" class="px-6 py-3 rounded-full bg-slate-800 text-white font-bold hover:bg-slate-700 transition shadow-lg flex items-center gap-2">
-          📄 Voir CV détaillé
-        </a>
-        <a href="#contact" class="px-6 py-3 rounded-full bg-white/50 text-slate-800 font-bold hover:bg-white transition border border-white shadow-lg">
-          Me Contacter
-        </a>
+      <div class="text-center md:text-left flex-1">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-2" style="color: var(--color-blue);">Mathilde Martine PAISLEY</h1>
+        <h2 class="text-xl md:text-2xl font-bold mb-4" style="color: var(--color-bronze);">Coordinatrice Paie & Conformité Sociale</h2>
+        <h3 class="text-lg font-medium text-gray-600 mb-6">Spécialiste Paie – Conseil RH & Digitalisation des Processus</h3>
+        
+        <p class="text-gray-700 leading-relaxed mb-6 max-w-2xl bg-[var(--color-ivory)] p-6 rounded-lg border-l-4 border-[var(--color-blue)]">
+          20 ans d’expérience en gestion et conformité sociale. <br>
+          <strong>Rigueur, curiosité et sens du partage.</strong> J’aime comprendre avant d’agir, clarifier ce qui semble complexe et rendre les équipes plus autonomes.
+          Profil hybride RH & Paie, à la croisée de la gestion opérationnelle, de la conformité sociale et de la digitalisation des processus.
+        </p>
+
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-semibold">
+          <span class="flex items-center gap-2 px-4 py-2 bg-[var(--color-ivory)] rounded-full text-[var(--color-blue)] border border-gray-200">
+            <i class="fas fa-envelope"></i> mathilde.martine.paisley@gmail.com
+          </span>
+          <span class="flex items-center gap-2 px-4 py-2 bg-[var(--color-ivory)] rounded-full text-[var(--color-blue)] border border-gray-200">
+            <i class="fas fa-phone"></i> 06 85 90 08 87
+          </span>
+          <span class="flex items-center gap-2 px-4 py-2 bg-[var(--color-ivory)] rounded-full text-[var(--color-blue)] border border-gray-200">
+            <i class="fas fa-map-marker-alt"></i> Clichy (92), France
+          </span>
+        </div>
       </div>
     </section>
 
-    <!-- PARCOURS (Corrected Order) -->
-    <section id="parcours">
-      <h2 class="section-title">Parcours Professionnel</h2>
+    <!-- COMPETENCES -->
+    <section id="competences">
+      <h2 class="section-title">Compétences</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Paie & Conformité -->
+        <div class="card-ivory p-6 skill-category">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-calculator text-[var(--color-bronze)]"></i> Paie & Conformité sociale</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Supervision et fiabilisation de la paie (250 à 1 200 salariés)</li>
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Analyse et résolution des anomalies DSN et cotisations sociales</li>
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Gestion des temps et absences : CP, RTT, AT/MP, maladie</li>
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Suivi des DPAE, contrats, avenants et soldes de tout compte</li>
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Coordination avec URSSAF et caisses de retraite</li>
+          </ul>
+        </div>
+
+        <!-- SIRH & Support -->
+        <div class="card-ivory p-6 skill-category">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-laptop-code text-[var(--color-bronze)]"></i> SIRH & Support fonctionnel</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Analyse des besoins métiers et rédaction de spécifications</li>
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Recette, mise en production et validation des solutions SIRH</li>
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Animation d’ateliers utilisateurs et coordination RH / Paie / DSI</li>
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Rédaction de guides, procédures et référentiels métiers</li>
+          </ul>
+        </div>
+
+        <!-- Conseil & Formation -->
+        <div class="card-ivory p-6 skill-category">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-chalkboard-teacher text-[var(--color-bronze)]"></i> Conseil & Formation RH / Paie</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Conseil fonctionnel auprès des équipes RH et Paie</li>
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Animation de formations et transfert de compétences internes</li>
+            <li><i class="fas fa-check text-[var(--color-yellow)] mr-2"></i>Développement de l’autonomie et sécurisation des pratiques</li>
+          </ul>
+        </div>
+
+        <!-- Outils & Environnements -->
+        <div class="card-ivory p-6 skill-category">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-tools text-[var(--color-bronze)]"></i> Outils & Environnements</h3>
+          <p class="mb-2 font-semibold">SIRH / Paie :</p>
+          <p class="text-sm text-gray-700 mb-4 bg-white p-3 rounded border border-gray-200">
+            HR Access, SAP HR, SuccessFactors, Cegid, Chronotime, Pléiade, Workday, ADP Décidium
+          </p>
+          <p class="mb-2 font-semibold">Gestion de projet & Bureautique :</p>
+          <p class="text-sm text-gray-700 bg-white p-3 rounded border border-gray-200">
+            Jira, Trello, Monday.com, Gantt, Suite Office 365, Google Workspace
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCES -->
+    <section id="experiences">
+      <h2 class="section-title">Expériences Professionnelles</h2>
       <div class="timeline">
         
-        <!-- Expérience 1 -->
+        <!-- Nexpublica -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card">
-            <div class="flex flex-col md:flex-row justify-between md:items-center mb-2">
-              <h3 class="text-xl font-bold text-slate-800">Référente Fonctionnelle SIRH</h3>
-              <span class="text-sm font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full w-fit">Déc 2024 – Mai 2025</span>
-            </div>
-            <p class="text-slate-600 font-medium mb-1">Nexpublica</p>
-            <p class="text-sm text-slate-500 italic mt-2">Cliquez pour voir le détail des missions & résultats ▼</p>
-            
-            <div class="timeline-details text-slate-700">
-              <!-- D'ABORD : Ce que j'ai fait -->
-              <h4 class="font-bold mb-3 text-purple-900 border-b border-purple-100 pb-1 inline-block">Missions Principales</h4>
-              <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>Analyse des besoins clients et rédaction de spécifications fonctionnelles sur <strong>Chronotime</strong> (GTA).</li>
-                <li>Participation active à des ateliers de relecture avec les utilisateurs finaux.</li>
-                <li>Suivi des échanges techniques pour assurer l'adéquation solution/besoin.</li>
-              </ul>
-
-              <!-- ENSUITE : Objectif & Résultat -->
-              <div class="grid md:grid-cols-2 gap-4">
-                <div class="info-block">
-                  <span class="info-label">🎯 Objectif</span>
-                  Accompagner le client dans l'implémentation de l'outil et favoriser son autonomie.
-                </div>
-                <div class="info-block" style="border-left-color: #ffc4bc;">
-                  <span class="info-label" style="color: #d9826c;">🚀 Résultat</span>
-                  Rédaction de spécifications validées, animation d'ateliers et montée en compétence des équipes.
-                </div>
-              </div>
-            </div>
+          <div class="card-ivory p-6">
+            <span class="date-badge">Décembre 2024 – Mai 2025</span>
+            <h3 class="text-xl font-bold mt-2">Référente Fonctionnelle SIRH (Chronotime)</h3>
+            <p class="text-[var(--color-bronze)] font-semibold mb-3">Nexpublica</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>Recueil des besoins, rédaction de spécifications et animation d’ateliers utilisateurs.</li>
+              <li>Accompagnement des clients dans l’implémentation et la prise en main de l’outil.</li>
+              <li>Coordination avec les équipes techniques et suivi des évolutions.</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Expérience 2 -->
+        <!-- Ponticelli -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card">
-            <div class="flex flex-col md:flex-row justify-between md:items-center mb-2">
-              <h3 class="text-xl font-bold text-slate-800">Coordinatrice SIRH / Cheffe de Projet</h3>
-              <span class="text-sm font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full w-fit">Sept 2024 – Nov 2024</span>
-            </div>
-            <p class="text-slate-600 font-medium mb-1">Groupe Ponticelli Frères</p>
-            <p class="text-sm text-slate-500 italic mt-2">Cliquez pour voir le détail des missions & résultats ▼</p>
-
-            <div class="timeline-details text-slate-700">
-              <h4 class="font-bold mb-3 text-purple-900 border-b border-purple-100 pb-1 inline-block">Missions Principales</h4>
-              <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>Pilotage de la recette fonctionnelle (EC & Time) sur <strong>SAP SuccessFactors</strong>.</li>
-                <li>Coordination inter-pôles (RH, DSI, Intégrateur) et participation aux COPROJ.</li>
-                <li>Contribution à la formalisation des besoins métiers.</li>
-              </ul>
-
-              <div class="grid md:grid-cols-2 gap-4">
-                <div class="info-block">
-                  <span class="info-label">🎯 Objectif</span>
-                  Finaliser la recette et préparer la mise en production (Refonte SIRH complète).
-                </div>
-                <div class="info-block" style="border-left-color: #ffc4bc;">
-                  <span class="info-label" style="color: #d9826c;">🚀 Résultat</span>
-                  Validation des jalons de recette, sécurisation du Go-Live et coordination fluide.
-                </div>
-              </div>
-            </div>
+          <div class="card-ivory p-6">
+            <span class="date-badge">Septembre 2024 – Novembre 2024</span>
+            <h3 class="text-xl font-bold mt-2">Coordonnatrice SIRH / Chef de projet fonctionnelle</h3>
+            <p class="text-[var(--color-bronze)] font-semibold mb-3">Groupe Ponticelli Frères</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>Participation à la refonte du SIRH sur SAP et SuccessFactors.</li>
+              <li>Organisation de la recette et suivi des anomalies.</li>
+              <li>Lien entre les équipes RH et la DSI jusqu’à la mise en production.</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Expérience 3 -->
+        <!-- CGI -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card">
-            <div class="flex flex-col md:flex-row justify-between md:items-center mb-2">
-              <h3 class="text-xl font-bold text-slate-800">Consultante AMOA SIRH</h3>
-              <span class="text-sm font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full w-fit">Janv 2023 – Juin 2024</span>
-            </div>
-            <p class="text-slate-600 font-medium mb-1">CGI (Ministère de la Justice & Air Liquide)</p>
-            <p class="text-sm text-slate-500 italic mt-2">Cliquez pour voir le détail des missions & résultats ▼</p>
-            
-            <div class="timeline-details text-slate-700">
-              <h4 class="font-bold mb-3 text-purple-900 border-b border-purple-100 pb-1 inline-block">Missions (Projet Ministère)</h4>
-              <ul class="list-disc list-inside space-y-2 mb-4">
-                <li>Recette DSN et gestion des anomalies sur <strong>HR Access</strong>.</li>
-                <li>Formation des agents utilisateurs sur le terrain.</li>
-              </ul>
-              <h4 class="font-bold mb-3 text-purple-900 border-b border-purple-100 pb-1 inline-block">Missions (Projet Air Liquide)</h4>
-              <ul class="list-disc list-inside space-y-2 mb-6">
-                <li>Audit des rubriques de paie sur 30 sites.</li>
-                <li>Sécurisation des processus RH (Livre blanc).</li>
-              </ul>
-
-              <div class="grid md:grid-cols-2 gap-4">
-                <div class="info-block">
-                  <span class="info-label">🎯 Objectif</span>
-                  Piloter la recette (Octave) et actualiser le référentiel paie national.
-                </div>
-                <div class="info-block" style="border-left-color: #ffc4bc;">
-                  <span class="info-label" style="color: #d9826c;">🚀 Résultat</span>
-                  Déploiement sur 189 sites et harmonisation des pratiques paie industrielles.
-                </div>
-              </div>
-            </div>
+          <div class="card-ivory p-6">
+            <span class="date-badge">Janvier 2023 – Juin 2024</span>
+            <h3 class="text-xl font-bold mt-2">Consultante Fonctionnelle Paie / AMOA SIRH</h3>
+            <p class="text-[var(--color-bronze)] font-semibold mb-3">CGI</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>Accompagnement sur HR Access et Workday pour moderniser la paie.</li>
+              <li>Création de scripts, suivi des anomalies et mise à jour du référentiel paie.</li>
+              <li>Formation et support utilisateurs sur les outils SIRH.</li>
+            </ul>
           </div>
         </div>
 
-        <!-- Autres Expériences -->
+        <!-- Talent Solutions -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-content glass-card">
-            <div class="flex flex-col md:flex-row justify-between md:items-center mb-2">
-              <h3 class="text-xl font-bold text-slate-800">Expériences Précédentes</h3>
-              <span class="text-sm font-semibold text-slate-600 bg-slate-200 px-3 py-1 rounded-full w-fit">2002 - 2022</span>
-            </div>
-            <p class="text-slate-600 font-medium mb-1">Talent Solutions, Epi-Use, Sanofi, ADP...</p>
-            <p class="text-sm text-slate-500 italic mt-2">Cliquez pour voir le détail ▼</p>
-
-            <div class="timeline-details text-slate-700">
-              <ul class="list-disc list-inside space-y-2 mb-6">
-                <li><strong>Talent Solutions (2022) :</strong> Chargée RH & Coordination Paie (Cegid).</li>
-                <li><strong>Epi-Use (2018-2022) :</strong> Consultante Paie SIRH (Création CSP, Pléiade/SAP).</li>
-                <li><strong>Multi-Sociétés (2004-2018) :</strong> Gestionnaire de Paie confirmée.</li>
-                <li><strong>KFC (2002-2004) :</strong> Directrice de centre de profit.</li>
-              </ul>
-              
-              <div class="grid md:grid-cols-2 gap-4">
-                 <div class="info-block">
-                  <span class="info-label">🎯 Objectif</span>
-                  Fiabiliser la paie et optimiser les processus.
-                </div>
-                <div class="info-block" style="border-left-color: #ffc4bc;">
-                  <span class="info-label" style="color: #d9826c;">🚀 Résultat</span>
-                  Création de CSP, structuration métier et management d'équipes (jusqu'à 70 pers).
-                </div>
-              </div>
-            </div>
+          <div class="card-ivory p-6">
+            <span class="date-badge">Juillet 2022 – Décembre 2022</span>
+            <h3 class="text-xl font-bold mt-2">Chargée RH – Coordination Paie & Admin.</h3>
+            <p class="text-[var(--color-bronze)] font-semibold mb-3">Talent Solutions</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>Gestion de la paie et de l’administration du personnel (350 salariés).</li>
+              <li>Optimisation des process et fiabilisation des données RH.</li>
+              <li>Encadrement et accompagnement des gestionnaires.</li>
+            </ul>
           </div>
         </div>
+
+        <!-- Epi-Use -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card-ivory p-6">
+            <span class="date-badge">Novembre 2018 – Mars 2022</span>
+            <h3 class="text-xl font-bold mt-2">Consultante Paie SIRH</h3>
+            <p class="text-[var(--color-bronze)] font-semibold mb-3">Epi-Use France</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>Accompagnement post-création du CSP, dans un contexte de perte de compétences paie.</li>
+              <li>Structuration des processus, création de procédures et rédaction du livre blanc paie.</li>
+              <li>Animation d’ateliers, conception de supports et formation des nouveaux gestionnaires.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Multi Sociétés -->
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card-ivory p-6">
+              <span class="date-badge">Avril 2008 – Octobre 2018</span>
+              <h3 class="text-xl font-bold mt-2">Chargée de Paie</h3>
+              <p class="text-[var(--color-bronze)] font-semibold mb-3">Multi Sociétés</p>
+              <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>Gestion complète de la paie et de l’administration du personnel (250 à 1 200 salariés).</li>
+                <li>Optimisation des processus pour fiabiliser les traitements et réduire les délais.</li>
+                <li>Suivi des obligations légales et déclarations sociales (URSSAF, retraite, prévoyance).</li>
+                <li>Interventions sur divers environnements : SAP, ADP Décidium, Cegid, etc.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- KFC -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="card-ivory p-6">
+              <span class="date-badge">Avril 2002 – Mars 2004</span>
+              <h3 class="text-xl font-bold mt-2">Directrice de Centre de Profit</h3>
+              <p class="text-[var(--color-bronze)] font-semibold mb-3">KFC</p>
+              <ul class="list-disc list-inside space-y-2 text-gray-700">
+                <li>Management de 70 collaborateurs et supervision de la performance opérationnelle.</li>
+                <li>Pilotage des ventes, du recrutement et de la formation du personnel.</li>
+              </ul>
+            </div>
+          </div>
 
       </div>
     </section>
 
     <!-- FORMATIONS -->
     <section id="formations">
-      <h2 class="section-title">Diplômes & Formations</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="glass-card p-6 hover:bg-white/40 transition">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl">📚</div>
-            <div>
-              <h3 class="font-bold text-lg text-slate-800">Actualisation Paie & Droit Social</h3>
-              <p class="text-purple-700 font-semibold text-sm">Studi | Juin 2025 - Janv 2026</p>
-              <p class="text-slate-600 text-sm mt-2">Mise à jour DSN, conformité sociale, conventions collectives.</p>
+        <h2 class="section-title">Formations</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- 2025-2026 -->
+            <div class="card-ivory p-6 flex flex-col h-full border-t-4 border-[var(--color-yellow)]">
+                <div class="text-[var(--color-bronze)] font-bold mb-2">2025 – 2026</div>
+                <h3 class="text-lg font-bold text-[var(--color-blue)] mb-2">Gestion de la Paie et Conformité Sociale</h3>
+                <p class="text-sm font-semibold mb-3">STUDI (RNCP 37275 – NIVEAU 5)</p>
+                <p class="text-sm text-gray-700 mt-auto">Production de la paie, déclarations sociales, gestion administrative et conformité réglementaire. (En cours)</p>
             </div>
-          </div>
-        </div>
-        <div class="glass-card p-6 hover:bg-white/40 transition">
-          <div class="flex items-start gap-4">
-            <div class="text-3xl">🎓</div>
-            <div>
-              <h3 class="font-bold text-lg text-slate-800">Manager Stratégique RH (Bac+5)</h3>
-              <p class="text-purple-700 font-semibold text-sm">ESGRH Paris | 2021 - 2023</p>
-              <p class="text-slate-600 text-sm mt-2">Stratégie RH, Conduite du changement, Transformation des organisations.</p>
+
+            <!-- 2024-2025 -->
+            <div class="card-ivory p-6 flex flex-col h-full border-t-4 border-[var(--color-yellow)]">
+                <div class="text-[var(--color-bronze)] font-bold mb-2">2024 – 2025</div>
+                <h3 class="text-lg font-bold text-[var(--color-blue)] mb-2">Transformation Digitale et Management de l’Innovation</h3>
+                <p class="text-sm font-semibold mb-3">DIGITAL CAMPUS (RNCP 36129 – NIVEAU 7)</p>
+                <p class="text-sm text-gray-700 mt-auto">Pilotage de projets digitaux et accompagnement du changement dans les environnements RH. (Diplôme obtenu)</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- COMPÉTENCES - NEW DESIGN CLEAN -->
-    <section id="skills">
-      <h2 class="section-title">Compétences & Atouts</h2>
-      
-      <div class="skills-wrapper">
-        
-        <!-- Carte Technique -->
-        <div class="skill-card-clean">
-          <div class="skill-title-row">
-            <div class="skill-icon-box">🛠️</div>
-            <h3 class="text-xl font-bold text-slate-800">Expertise SIRH & Paie</h3>
-          </div>
-          <ul class="skill-list-clean">
-            <li class="skill-item-clean"><span class="skill-bullet"></span> SAP SuccessFactors (EC, Time)</li>
-            <li class="skill-item-clean"><span class="skill-bullet"></span> HR Access / Pléiade e5</li>
-            <li class="skill-item-clean"><span class="skill-bullet"></span> Chronotime (GTA) / Cegid</li>
-            <li class="skill-item-clean"><span class="skill-bullet"></span> Recette & Tests (Mise en prod)</li>
-            <li class="skill-item-clean"><span class="skill-bullet"></span> Rédaction Cahier des charges</li>
-            <li class="skill-item-clean"><span class="skill-bullet"></span> DSN / Veille Légale</li>
-          </ul>
+            <!-- 2022-2023 -->
+            <div class="card-ivory p-6 flex flex-col h-full border-t-4 border-[var(--color-yellow)]">
+                <div class="text-[var(--color-bronze)] font-bold mb-2">2022 – 2023</div>
+                <h3 class="text-lg font-bold text-[var(--color-blue)] mb-2">Manager en Ressources Humaines</h3>
+                <p class="text-sm font-semibold mb-3">ESGRH – GROUPE ESG (RNCP 35210 – NIVEAU 7)</p>
+                <p class="text-sm text-gray-700 mt-auto">Management stratégique des RH, conduite du changement et transformation organisationnelle. (Diplôme obtenu)</p>
+            </div>
         </div>
-
-        <!-- Carte Soft Skills -->
-        <div class="skill-card-clean">
-          <div class="skill-title-row">
-            <div class="skill-icon-box" style="background:#fff0f5; color:#d9826c">🧠</div>
-            <h3 class="text-xl font-bold text-slate-800">Savoir-Être</h3>
-          </div>
-          <ul class="skill-list-clean">
-            <li class="skill-item-clean"><span class="skill-bullet" style="background:#ffc4bc"></span> Leadership & Management</li>
-            <li class="skill-item-clean"><span class="skill-bullet" style="background:#ffc4bc"></span> Communication & Pédagogie</li>
-            <li class="skill-item-clean"><span class="skill-bullet" style="background:#ffc4bc"></span> Adaptabilité & Agilité</li>
-            <li class="skill-item-clean"><span class="skill-bullet" style="background:#ffc4bc"></span> Rigueur & Fiabilité</li>
-            <li class="skill-item-clean"><span class="skill-bullet" style="background:#ffc4bc"></span> Esprit d'analyse & Synthèse</li>
-            <li class="skill-item-clean"><span class="skill-bullet" style="background:#ffc4bc"></span> Sens du service client</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- DETAILS / ENGAGEMENTS -->
-    <section id="details" class="space-y-6">
-      <h2 class="section-title">Engagements & Informations</h2>
-
-      <div class="glass-card acc-item">
-        <div class="acc-header">
-          <span>🏆 Réalisations Clés</span>
-          <span class="acc-icon text-2xl">+</span>
-        </div>
-        <div class="acc-body text-slate-700">
-          <ul class="space-y-2 mt-2">
-            <li>✅ <strong>Nexpublica :</strong> Pilotage complet de la recette GTA Chronotime.</li>
-            <li>✅ <strong>Ministère de la Justice :</strong> Déploiement Octave sur 189 établissements.</li>
-            <li>✅ <strong>Air Liquide :</strong> Interviews sur 30 sites pour harmonisation des pratiques paie.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="glass-card acc-item">
-        <div class="acc-header">
-          <span>🤝 Communauté "Payroll Boss Elite Club"</span>
-          <span class="acc-icon text-2xl">+</span>
-        </div>
-        <div class="acc-body text-slate-700">
-          <p class="mb-4">Créatrice d'une communauté bénévole d'entraide pour les gestionnaires de paie.</p>
-          <div class="flex gap-4">
-             <a href="https://chat.whatsapp.com/EtV0ux5ipAG5JDhopzo0ut" target="_blank" class="px-4 py-2 bg-green-500 text-white rounded-lg font-bold shadow hover:bg-green-600 transition">WhatsApp</a>
-             <a href="https://discord.gg/4XFpkQDzde" target="_blank" class="px-4 py-2 bg-indigo-500 text-white rounded-lg font-bold shadow hover:bg-indigo-600 transition">Discord</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass-card acc-item">
-        <div class="acc-header">
-          <span>♿ Engagement & Transparence (RQTH)</span>
-          <span class="acc-icon text-2xl">+</span>
-        </div>
-        <div class="acc-body text-slate-700">
-          <p class="mb-2">Statut RQTH (Handicap non-visible). Aménagements simples nécessaires :</p>
-          <ul class="list-disc list-inside">
-            <li>Siège et bureau ergonomiques.</li>
-            <li>Clavier et souris adaptés.</li>
-            <li>Logiciel de prise de notes.</li>
-          </ul>
-          <p class="text-sm mt-2 text-slate-500">Aides possibles via l'AGEFIPH.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="glass-card p-10 text-center">
-      <h2 class="text-3xl font-bold mb-8 text-slate-800">Me Contacter</h2>
-      <div class="flex flex-wrap justify-center gap-6">
-        <a href="mailto:mathilde.martine.paisley@gmail.com" class="bg-white/60 px-6 py-4 rounded-xl shadow-sm hover:shadow-md transition flex items-center gap-3 border border-white">
-          <span class="text-2xl">📧</span>
-          <span class="font-bold text-slate-800">mathilde.martine.paisley@gmail.com</span>
-        </a>
-        <a href="tel:0685900887" class="bg-white/60 px-6 py-4 rounded-xl shadow-sm hover:shadow-md transition flex items-center gap-3 border border-white">
-          <span class="text-2xl">📱</span>
-          <span class="font-bold text-slate-800">06 85 90 08 87</span>
-        </a>
-        <a href="https://www.viamichelin.fr/web/Itineraires?arrival=92110%20Clichy%2C%20France&route=2" target="_blank" class="bg-white/60 px-6 py-4 rounded-xl shadow-sm hover:shadow-md transition flex items-center gap-3 border border-white">
-          <span class="text-2xl">🏠</span>
-          <span class="font-bold text-slate-800">92110 Clichy, France</span>
-        </a>
-      </div>
     </section>
 
   </main>
 
-  <footer class="text-center py-6 text-slate-600 text-sm glass-nav">
-    © 2025 Mathilde Martine PAISLEY – Experte Paie & SIRH ✨
+  <!-- FOOTER -->
+  <footer class="footer-section">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        
+        <div class="text-center md:text-left">
+            <img src="https://projettechacademy.github.io/Projet_Python/Asset/Logo_MMPA.jpeg" alt="Logo MMPA" class="h-20 w-auto mb-4 mx-auto md:mx-0 rounded-lg shadow-lg">
+            <p class="text-sm opacity-80">© 2025 Mathilde Martine PAISLEY</p>
+            <p class="text-sm opacity-80">CV réalisé sur DoYouBuzz (Adaptation Web)</p>
+        </div>
+
+        <div class="flex flex-col items-center md:items-end">
+            <h4 class="font-bold text-[var(--color-yellow)] mb-4 uppercase tracking-widest text-sm">Réseaux Sociaux</h4>
+            <div class="flex gap-4">
+                <a href="https://chat.whatsapp.com/IoMXFl4o2otExYKCPVj22b" target="_blank" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://discord.gg/redT9wEE6T" target="_blank" class="social-icon" title="Discord"><i class="fab fa-discord"></i></a>
+                <a href="https://www.linkedin.com/in/mathilde-martine-paisley-1a4422382/" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.tiktok.com/@enervyx" target="_blank" class="social-icon" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/enervyx/" target="_blank" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <a href="https://projettechacademy.github.io/CV_MMPA-CV-Mathilde-Martine-PAISLEY/" class="mt-4 text-sm underline hover:text-[var(--color-yellow)]">Voir le Portfolio Complet</a>
+        </div>
+
+    </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggleAccordion = (item, contentClass, activeClass = 'active') => {
-        const content = item.querySelector(contentClass);
-        const isActive = item.classList.contains(activeClass);
-        if (!isActive) { item.classList.add(activeClass); } else { item.classList.remove(activeClass); }
-      };
-      document.querySelectorAll('.timeline-content').forEach(el => {
-        el.addEventListener('click', function() { toggleAccordion(this, '.timeline-details'); });
-      });
-      document.querySelectorAll('.acc-header').forEach(el => {
-        el.addEventListener('click', function() { toggleAccordion(this.parentElement, '.acc-body'); });
-      });
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        });
-      });
-    });
-  </script>
 </body>
 </html>
